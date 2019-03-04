@@ -5,6 +5,7 @@ window.onload = function ()
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
+	    console.log(this.responseText);
 	    var jsonData = JSON.parse(this.responseText);
 	    document.getElementById("header").innerHTML = jsonData.name;
 	    console.log(jsonData + "&&");
