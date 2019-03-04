@@ -1,0 +1,120 @@
+* {
+    margin: 0 auto;
+    font-family: Noto Sanas, Helvitica, Arial, sans-serif;
+}
+
+body
+{
+	background-color: #e6e6e6;
+}
+
+td
+{
+	background-color: white;
+	width: 17vw;
+	height: 17vw;
+	vertical-align: top;
+}	
+
+table img
+{
+	width: 96%;
+	height: auto%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}	
+
+td div p
+{
+	padding-top: 1em;
+	font-size: 150%;
+}
+
+h3
+{
+	font-size: 190%;
+	font-weight: normal;
+	padding-top: 1em;
+}
+
+table
+{
+	border-spacing: 15px;
+}
+
+#content
+{
+	width: 70vw;
+	padding-top: 6em;
+}	
+
+html {
+    width: 100%;
+    font-size: 50%;
+}
+
+#header
+{
+	position: fixed;
+	width: 100vw;
+	background-color: #0092B9;
+}
+
+#header_content
+{
+	width: 68vw;
+}
+
+#user_interface
+{
+	text-align: right;
+}
+
+#user_interface div
+{
+	margin: 4px;
+}
+
+#header a
+{
+	color: white;
+	text-decoration: none;
+	padding: 8px;
+}
+
+#search input
+{
+	margin-left: 20px;
+}	
+
+#twitter
+{
+	margin-left: 5px;
+}	
+
+#logo img, #logo
+{
+	float: left;
+}
+
+#logo_text h1
+{
+	width: 26vw;
+}
+
+#logo_text h2
+{
+	font-size: 120%
+	width: 25vw;
+}	
+
+#footer
+{
+	color: white;
+	font-size: 170%;
+	background-color: black;
+	margin-bottom: 1em;
+	padding: 1em;
+	width: 74vw;
+}
