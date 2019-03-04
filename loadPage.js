@@ -5,7 +5,7 @@ window.onload = function ()
 	req.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 	    var jsonData = JSON.parse(this.responseText);
-	    document.getElementById("p1").innerHTML = jsonData.name;
+	    document.getElementById("header").innerHTML = jsonData.name;
 	    console.log(jsonData + "&&");
 	  }
 	};
