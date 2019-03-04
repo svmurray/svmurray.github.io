@@ -9,6 +9,6 @@ window.onload = function ()
 	    console.log(jsonData + "&&");
 	  }
 	};
-	req.open("GET", "test.json", true);
+	req.open("GET", "index.json", true);
 	req.send();
 }
