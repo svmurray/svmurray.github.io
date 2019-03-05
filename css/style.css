@@ -3,10 +3,58 @@
     font-family: Noto Sanas, Helvitica, Arial, sans-serif;
 }
 
+#header
+{
+	position: fixed;
+	width: 100vw;
+	background-color: rgba(11,165,60,.5);
+	font-size: 250%;
+	text-align: center;
+	padding-bottom:1vh;
+}
+
+#header a
+{
+    color: #333333;
+    margin: 1vh 1vw 1vh 0vw;
+}
+
+#header a:hover
+{
+	color: white;
+}
+
 body
 {
 	background-color: #e6e6e6;
 }
+
+#footer
+{
+	color: white;
+	font-size: 170%;
+	background-color: black;
+	margin-bottom: 1em;
+	padding: 1em;
+	width: 74vw;
+	text-align: center;
+}
+
+#footer a
+{
+    color:white;
+}
+
+#footer a:hover
+{
+	color: #31ede6;
+}
+
+
+
+
+
+
 
 td
 {
@@ -46,7 +94,7 @@ table
 #content
 {
 	width: 70vw;
-	padding-top: 6em;
+	padding-top: 17vh;
 }	
 
 html {
@@ -54,12 +102,6 @@ html {
     font-size: 50%;
 }
 
-#header
-{
-	position: fixed;
-	width: 100vw;
-	background-color: #0092B9;
-}
 
 #header_content
 {
@@ -76,12 +118,7 @@ html {
 	margin: 4px;
 }
 
-#header a
-{
-	color: white;
-	text-decoration: none;
-	padding: 8px;
-}
+
 
 #search input
 {
@@ -109,12 +146,4 @@ html {
 	width: 25vw;
 }	
 
-#footer
-{
-	color: white;
-	font-size: 170%;
-	background-color: black;
-	margin-bottom: 1em;
-	padding: 1em;
-	width: 74vw;
-}
+

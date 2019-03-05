@@ -4,5 +4,19 @@
         "name": "Samuel V. Murray",
         "email": "samvmurray@gmail.com",
         "phone": "(262) 501-9560"
+    },
+    
+    "footerData":
+    {
+        "text": "Created by Sam Murray. Translations Powered by ",
+        "linkText": "Yandex.Translate",
+        "linkAddr": "http://translate.yandex.com"
+    },
+    
+    "links":
+    {
+        "index": "index.html",
+        "projects": "projects.html",
+        "resume": "resume.html"
     }
 }
