@@ -1,4 +1,8 @@
 { 
-    "name": "Sam Murray from JSON",
-    "data": "testData"
+    "headerData":
+    {
+        "name": "Samuel V. Murray",
+        "email": "samvmurray@gmail.com",
+        "phone": "(262) 501-9560"
+    }
 }
