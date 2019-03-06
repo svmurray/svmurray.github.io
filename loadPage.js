@@ -65,7 +65,7 @@ function loadContent(page, json)
         var workList = workDiv.appendChild(createElement("ul", "", "workList"));
         for (i in json.resume.work)
         {
-            workList.appendChild(createElement("li", json.resume.work[i], "work" + i));
+            workList.appendChild(createElement("li", json.resume.work[i].comp + "**" + json.resume.work[i].loca + "**" + json.resume.work[i].date + "**" + json.resume.work[i].title + "**" + json.resume.work[i].resp, "work" + i));
         }
         document.getElementById("content").insertBefore(workDiv, document.getElementById("footer"));
     }
