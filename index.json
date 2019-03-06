@@ -18,5 +18,116 @@
         "index": "index.html",
         "projects": "projects.html",
         "resume": "resume.html"
+    },
+    
+    "resume":
+    {
+        "education":
+        {
+            "school": "University of St. Thomas",
+            "csMajor": "Major: Computer Science (B.A.)",
+            "scomMajor": "Major: Business Administration - Supply Chain & Operations Management (B.A.)",
+            "minor": "Minor: Data Analytics",
+            "dl": "Dean's List: Fall 2015 - Fall 2018",
+            "gpa": "3.91/4",
+            "aqui": "Aquinas Scholar",
+            "studyAbroad" 
+            {
+                "jterm": "January-Term: Theology 101 (Rome ‘16), UMAIE English (France & Italy 17), UST Theology 490 (Israel & Jordan ’19)",
+                "semester": "UST London Business Semester (Fall ’17)"
+            }
+        },
+        "work": 
+        [
+            {
+                "comp": "General Electric - GE Renewables",
+                "loca": "Schenectady, New York",
+                "date": "June 2018-Sept 2018",
+                "title":
+                [
+                    {"data": "Technical EID Intern - Nacelle Transfer Function Root Cause Analysis"},
+                    {"data": "Technical EID Intern - Digital League"}
+                ],
+                "resp": 
+                [
+                    {"info": "Created MATLAB code to manipulate, visualize, and analyze wind turbine data and trends"},
+                    {"info": "Queried and manipulated data to identify opportunities and trends for potential cost savings"}
+                ]
+            },
+            {
+                "comp": "University of St. Thomas",
+                "loca": "St. Paul, Minnesota",
+                "date":
+                [
+                    {"time": "Nov 2016-Sept 2017"},
+                    {"time": "July 2017-Sept 2017"},
+                    {"time": "Sept 2016-May 2017 & Feb 2019-May 2019"}
+                ],
+                "title":
+                [
+                    {"data": "Math Department Research Assistant"},
+                    {"data": "Football Play-by-Play Analyst (Volunteer)"},
+                    {"data": "Computer and Information Sciences Department Tutor"}
+                ],
+                "resp": 
+                [
+                    {"info": "Examined Knotting Transitions in order to assist in Knot Theory research "},
+                    {"info": "Wrote scripts to identify and analyze tendencies of St. Thomas and opponents for game plan purposes"},
+                    {"info": "Assisted students who have questions in Java for Object-Oriented Design (2nd class in CS Progression)"}
+                ]
+            },
+            {
+                "comp": "Dedicated Computing",
+                "loca": "Waukesha, Wisconsin",
+                "date": "June 2016-Sept 2016",
+                "title": "Application Systems Analyst Intern",
+                "resp": "Assisted IT and Analyst teams with Resource Management and implementation of a new ERP system."
+            },
+            {
+                "comp": "Lindner & Marsack, S.C.",
+                "loca": "Milwaukee, Wisconsin",
+                "date": "June 2015-Sept 2015",
+                "title": "File Clerk",
+                "resp": "Scanned, filed, and organized client files."
+            },
+            {
+                "comp": "Village of Pewaukee",
+                "loca": "Pewaukee, Wisconsin",
+                "date": "Sporadic Dates 2014-2015",
+                "title": "Election Inspector",
+                "resp": "Monitored election proceedings at the local polling station."
+            }
+        ],
+    
+        "leadership": 
+        [
+            {
+                "value": "University of St. Thomas",
+                "data": 
+                [
+                    {"info": "Rugby Football Club 15’s and 7’s Side (Match Secretary: Spring 2018)"},
+                    {"info": "Intramural Sports: Basketball, Touch Football"},
+                    {"info": "Supply Chain & Operations Club"},
+                    {"info": "Computer Science Club"}
+                ]
+            },
+            {
+                "value": "Team Captain",
+                "data":
+                [
+                    {"info": "UST Rugby Football Club (Spring 2017 – Spring 2019)"},
+                    {"info": "Pewaukee Football Team (2014)"},
+                    {"info": "Relay for Life (2014)"}
+                ]
+            },
+            {"value": "National Merit Commended Scholar"},
+            {"value": "Delta Epsilon Sigma - National Scholastic Honor Society"},
+            {"value": "Beta Gamma Sigma - National Business Honor Society"}
+        ],
+
+        "skills": [
+            {"value": "Word, Excel (including Palisade Suite), PowerPoint, Access"},
+            {"value": "Coding: MATLAB, Java, HTML5, Javascript, CSS, SQL, Perl, some C++"}
+        ]
     }
 }
