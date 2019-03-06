@@ -71,16 +71,16 @@ function loadContent(page, json)
 
 	var leadDiv = createElement("div", "", "leadDiv");
         leadDiv.appendChild(createElement("h3", "Leadership, Activities, & Honors", "leadHead"));
-        var leadList = workDiv.appendChild(createElement("ul", "", "leadList"));
+        var leadList = leadDiv.appendChild(createElement("ul", "", "leadList"));
         for (i in json.resume.leadership)
         {
 		if (json.resume.leadership[i].data != undefined)
 		{
-            leadList.appendChild(createElement("li", json.resume.leadership[i].value + "**" + json.resume.leadership[i].data, "work" + i));
+            leadList.appendChild(createElement("li", json.resume.leadership[i].value + "**" + json.resume.leadership[i].data, "lead" + i));
 		}
 		else
 		{
-            leadList.appendChild(createElement("li", json.resume.leadership[i].value, "work" + i));			
+            leadList.appendChild(createElement("li", json.resume.leadership[i].value, "lead" + i));			
 		}
 	}
         document.getElementById("content").insertBefore(leadDiv, document.getElementById("footer"));
