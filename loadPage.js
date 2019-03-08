@@ -39,6 +39,7 @@ function loadHome(json)
     document.getElementById("content").insertBefore(picDiv, document.getElementById("footer"));
 
     var pDiv = createElement("div", "", "pDiv");
+	pDiv.appendChild(createElement("h3", "About Me:", "parHead"));
     for (var i in json.home.paragraphs)
     {
         pDiv.appendChild(createElementWithStyleProps("p", json.home.paragraphs[i].item, "pDiv" + i, ["textIndent"], ["2rem"])); 
