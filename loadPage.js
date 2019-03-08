@@ -152,7 +152,7 @@ function loadResume(json)
             for (j in json.resume.work[i].date)
             {
                 currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].date[j].time, "workDate" + i + "_" + j, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
-                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft"], ["block", "left", "2vw"]));
+                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft", "fontStyle"], ["block", "left", "2vw", "italic"]));
                 currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].resp[j].info, "workResp" + i + "_" + j, ["paddingLeft"], ["4vw"]));
             }
         }
@@ -161,14 +161,14 @@ function loadResume(json)
             currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].date, "workDate" + i, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
             for (j in json.resume.work[i].title)
             {
-                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft"], ["block", "left", "2vw"]));
+                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft", "fontStyle"], ["block", "left", "2vw", "italic"]));
                 currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].resp[j].info, "workResp" + i + "_" + j, ["paddingLeft"], ["4vw"]));
             }
         }
         else
         {
             currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].date, "workDate" + i, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
-            currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title, "workTit" + i, ["display", "clear", "paddingLeft"], ["block", "left", "2vw"]));
+            currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title, "workTit" + i, ["display", "clear", "paddingLeft", "fontStyle"], ["block", "left", "2vw", "italic"]));
             currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].resp, "workResp" + i, ["paddingLeft"], ["4vw"]));
         }
         workList.appendChild(currEl);             
