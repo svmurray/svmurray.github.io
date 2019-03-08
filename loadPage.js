@@ -23,70 +23,123 @@ window.onload = function ()
         holdFoot.appendChild(createElement("span", jsonData.footerData.text, "footText"));
         holdFoot.appendChild(createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true));
         
-        loadContent(document.getElementById("title").innerHTML, jsonData);
+        if(document.getElementById("title").innerHTML == "Projects")
+        {
+        }
+        else if (document.getElementById("title").innerHTML == "Home")
+        {
+        }
+        else if (document.getElementById("title").innerHTML == "Resume") {loadResume(jsonData);}
 	  }
 	};
 	req.open("GET", "index.json", true);
 	req.send();
 }
 
-function loadContent(page, json)
+function loadResume(json)
 {
-    if(page == "Projects")
+    var eduDiv = createElement("div", "", "eduDiv"); 
+    eduDiv.appendChild(createElement("h3", "Education", "eduHead"));
+    var eduList = eduDiv.appendChild(createElement("ul", "", "eduList"));
+    for (var i in json.resume.education)
     {
-        console.log("projects conditional")
-    }
-    else if (page == "Home")
-    {
-        console.log("home conditional")
-    }
-    else if (page == "Resume")
-    {
-        var eduDiv = createElement("div", "", "eduDiv"); 
-        eduDiv.appendChild(createElement("h3", "Education", "eduHead"));
-        var eduList = eduDiv.appendChild(createElement("ul", "", "eduList"));
-        for (var i in json.resume.education)
+        if (typeof json.resume.education[i] == "object")
         {
-            if (typeof json.resume.education[i] == "object")
+            eduList.appendChild(createElement("li", json.resume.education[i].value, "edu" + i));
+            var innerList = createElement("ul", "", "SAList");
+            innerList.appendChild(createElement("li", json.resume.education[i].jterm, "jterm"));
+            innerList.appendChild(createElement("li", json.resume.education[i].semester, "semester"));
+            eduList.appendChild(innerList)
+        }
+        else 
+        {
+            //add link functionality for ust & aquinas scholars
+            if ((json.resume.education[i]).indexOf("University") >= 0)
             {
-                eduList.appendChild(createElement("li", json.resume.education[i].value, "edu" + i));
-                var innerList = createElement("ul", "", "SAList");
-                innerList.appendChild(createElement("li", json.resume.education[i].jterm, "jterm"));
-                innerList.appendChild(createElement("li", json.resume.education[i].semester, "semester"));
-                eduList.appendChild(innerList)
-                console.log("Got an obj her cap'n");
+                var ele = createElement("li", "", "edu" + i);
+                ele.appendChild(createLink(json.resume.education[i], "ustLink", "http://stthomas.edu", true));
+                eduList.appendChild(ele);
+
             }
-            else {eduList.appendChild(createElement("li", json.resume.education[i], "edu" + i));}
+            else if (json.resume.education[i].indexOf("Aquinas") >= 0)
+            {
+                var ele = createElement("li", "", "edu" + i);
+                ele.appendChild(createLink(json.resume.education[i], "aqLink", "https://www.stthomas.edu/aquinasscholars/", true));
+                eduList.appendChild(ele);
+            }
+            else
+            {
+                eduList.appendChild(createElement("li", json.resume.education[i], "edu" + i));
+            }
         }
-        document.getElementById("content").insertBefore(eduDiv, document.getElementById("footer"));
-        
-        var workDiv = createElement("div", "", "workDiv");
-        workDiv.appendChild(createElement("h3", "Work", "workHead"));
-        var workList = workDiv.appendChild(createElement("ul", "", "workList"));
-        for (i in json.resume.work)
-        {
-            workList.appendChild(createElement("li", json.resume.work[i].comp + "\n" + json.resume.work[i].loca + "**" + json.resume.work[i].date + "**" + json.resume.work[i].title + "**" + json.resume.work[i].resp, "work" + i));
-        }
-        document.getElementById("content").insertBefore(workDiv, document.getElementById("footer"));
-
-	var leadDiv = createElement("div", "", "leadDiv");
-        leadDiv.appendChild(createElement("h3", "Leadership, Activities, & Honors", "leadHead"));
-        var leadList = leadDiv.appendChild(createElement("ul", "", "leadList"));
-        for (i in json.resume.leadership)
-        {
-		if (json.resume.leadership[i].data != undefined)
-		{
-            leadList.appendChild(createElement("li", json.resume.leadership[i].value + "**" + json.resume.leadership[i].data, "lead" + i));
-		}
-		else
-		{
-            leadList.appendChild(createElement("li", json.resume.leadership[i].value, "lead" + i));			
-		}
-	}
-        document.getElementById("content").insertBefore(leadDiv, document.getElementById("footer"));
-
-    
     }
+    document.getElementById("content").insertBefore(eduDiv, document.getElementById("footer"));
+    
+    var workDiv = createElement("div", "", "workDiv");
+    workDiv.appendChild(createElement("h3", "Work", "workHead"));
+    var linkAr = ["https://www.ge.com/renewableenergy", "http://stthomas.edu", "https://www.dedicatedcomputing.com/", "http://www.lindner-marsack.com/", "http://www.villageofpewaukeewi.us/"]
+    
+    var workList = workDiv.appendChild(createElementWithStyleProps("ul", "", "workList", ["listStyle", "paddingLeft"], ["none", "1vw"]));
+    for (i in json.resume.work)
+    {
+        var currEl = createElement("li", "", "work" + i);
+        
+        var ele = createElementWithStyleProps("li", "", "link" + i, ["paddingTop", "display", "cssFloat"], [".5rem", "block", "left"]);
+        ele.appendChild(createLink(json.resume.work[i].comp, json.resume.work[i].comp + "Link", "https://www.stthomas.edu/aquinasscholars/", true));
+        currEl.appendChild(ele);
+
+        currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].loca, "workLoca" + i, ["display", "textAlign", "cssFloat", "paddingTop"], ["block", "right", "right", ".5rem"]));
+        
+        if (typeof json.resume.work[i].date == "object")
+        {
+            for (j in json.resume.work[i].date)
+            {
+                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].date[j].time, "workDate" + i + "_" + j, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
+                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft"], ["block", "left", "2vw"]));
+                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].resp[j].info, "workResp" + i + "_" + j, ["paddingLeft"], ["4vw"]));
+            }
+        }
+        else if (typeof json.resume.work[i].title == "object")
+        {
+            currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].date, "workDate" + i, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
+            for (j in json.resume.work[i].title)
+            {
+                currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft"], ["block", "left", "2vw"]));
+                currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].resp[j].info, "workResp" + i + "_" + j, ["paddingLeft"], ["4vw"]));
+            }
+        }
+        else
+        {
+            currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].date, "workDate" + i, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
+            currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title, "workTit" + i, ["display", "clear", "paddingLeft"], ["block", "left", "2vw"]));
+            currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].resp, "workResp" + i, ["paddingLeft"], ["4vw"]));
+        }
+        workList.appendChild(currEl);             
+    }
+    document.getElementById("content").insertBefore(workDiv, document.getElementById("footer"));
+
+    var leadDiv = createElement("div", "", "leadDiv");
+    leadDiv.appendChild(createElement("h3", "Leadership, Activities, & Honors", "leadHead"));
+    var leadList = leadDiv.appendChild(createElement("ul", "", "leadList"));
+    for (i in json.resume.leadership)
+    {
+	    if (typeof json.resume.leadership[i].data == "object")
+	    {
+	        var currEl = createElement("li", json.resume.leadership[i].value, "lead" + i);
+	        var currList = currEl.appendChild(createElement("ul", "", json.resume.leadership[i].data + "list"));
+	        for (var j in json.resume.leadership[i].data) {currList.appendChild(createElement("li", json.resume.leadership[i].data[j].info, "lead" + i + "_" + j));}
+	        leadList.appendChild(currEl);
+	    }
+	    else {leadList.appendChild(createElement("li", json.resume.leadership[i].value, "lead" + i));			}
+    }
+    document.getElementById("content").insertBefore(leadDiv, document.getElementById("footer"));
+}
+
+function createElementWithStyleProps(type, content, id, props, values)
+{
+    var result = createElement(type, content, id);
+    for (var i in props) {result.style[props[i]] = values[i];}
+    return result;
 }
 
 function createLink(content, id, addr, blankTF)
