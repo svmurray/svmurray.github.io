@@ -73,90 +73,9 @@ color: #841534;
 
 
 
-td
-{
-	background-color: white;
-	width: 17vw;
-	height: 17vw;
-	vertical-align: top;
-}	
-
-table img
-{
-	width: 96%;
-	height: auto%;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}	
-
-td div p
-{
-	padding-top: 1em;
-	font-size: 150%;
-}
-
-h3
-{
-	font-size: 190%;
-	font-weight: normal;
-	padding-top: 1em;
-}
-
-table
-{
-	border-spacing: 15px;
-}
 
 #content
 {
 	width: 70vw;
 	padding-top: 17vh;
-}	
-
-
-
-#header_content
-{
-	width: 68vw;
 }
-
-#user_interface
-{
-	text-align: right;
-}
-
-#user_interface div
-{
-	margin: 4px;
-}
-
-
-
-#search input
-{
-	margin-left: 20px;
-}	
-
-#twitter
-{
-	margin-left: 5px;
-}	
-
-#logo img, #logo
-{
-	float: left;
-}
-
-#logo_text h1
-{
-	width: 26vw;
-}
-
-#logo_text h2
-{
-	font-size: 120%
-	width: 25vw;
-}	
-
-
