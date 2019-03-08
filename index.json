@@ -25,7 +25,61 @@
         {
             "thumbnail": "dummyVal",
             "bigPic": "dummyVal1",
-            "title": "dummyVal2",
+            "title": "Jazmyn",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "Simulated Pipelined Processor",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "Peer-2-Peer Chat Server w/Group Message Capabilities",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "History Sniffing Chess Board",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "Operating Systems Simulated Scheduler",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "Virtual to Physical Memory Simulator",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "Plagues, Prophets and People: High Priest Visual Journal",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "Intercultural Identity Paper",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "Center for the Common Good",
+            "desc": "dummyVal3"
+        },
+        {
+            "thumbnail": "dummyVal",
+            "bigPic": "dummyVal1",
+            "title": "Net Neutrality Investigation",
             "desc": "dummyVal3"
         }
     ],
