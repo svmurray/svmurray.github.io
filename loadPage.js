@@ -65,7 +65,7 @@ function loadProjects(json)
 	projDiv.appendChild(createElement("h3", "Projects:", "projHead"));
 	for (var i in json.projects)
 	{
-		projDiv.appendChild(createElement("div", json.projects[i].title. "proj" + i));
+		projDiv.appendChild(createElement("div", json.projects[i].title, "proj" + i));
 	}
     document.getElementById("content").insertBefore(projDiv, document.getElementById("footer"));
 }
