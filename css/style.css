@@ -34,9 +34,10 @@ body
 	color: white;
 	font-size: 90%;
 	background-color: black;
-	margin-bottom: 1em;
-	padding: 1em;
+	margin-bottom: 1rem;
+	padding: 1rem;
 	text-align: center;
+	margin-top: 1rem;
 }
 
 #footer a
