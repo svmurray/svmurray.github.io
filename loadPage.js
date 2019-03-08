@@ -45,7 +45,7 @@ function loadHome(json)
     }
     document.getElementById("content").insertBefore(pDiv, document.getElementById("footer"));
 
-    var newsDiv = createElement("div", "Recent News:", "newsDiv");
+    var newsDiv = createElementWithStyleProps("div", "Recent News:", "newsDiv", ["marginTop"], ["2rem"]);
     var newsList = newsDiv.appendChild(createElement("ul", "", "newsList"));
     for (var i in json.home.news)
     {
