@@ -23,17 +23,67 @@ window.onload = function ()
         holdFoot.appendChild(createElement("span", jsonData.footerData.text, "footText"));
         holdFoot.appendChild(createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true));
         
-        if(document.getElementById("title").innerHTML == "Projects")
-        {
-        }
-        else if (document.getElementById("title").innerHTML == "Home")
-        {
-        }
+        if(document.getElementById("title").innerHTML == "Projects") {loadProjects(jsonData);}
+        else if (document.getElementById("title").innerHTML == "Home") {loadHome(jsonData);}
         else if (document.getElementById("title").innerHTML == "Resume") {loadResume(jsonData);}
 	  }
 	};
 	req.open("GET", "index.json", true);
 	req.send();
+}
+
+function loadHome(json)
+{
+    var picDiv = createElement("div", "", "picDiv");
+    //createImage
+    document.getElementById("content").insertBefore(picDiv, document.getElementById("footer"));
+
+    var pDiv = createElement("div", "", "pDiv");
+    for (var i in json.home.paragraphs)
+    {
+        pDiv.appendChild(createElementWithStyleProps("p", json.home.paragraphs[i].item, "pDiv" + i, ["textIndent"], ["2rem"])); 
+    }
+    document.getElementById("content").insertBefore(pDiv, document.getElementById("footer"));
+
+    var newsDiv = createElement("div", "Recent News:", "newsDiv");
+    var newsList = newsDiv.appendChild(createElement("ul", "", "newsList"));
+    for (var i in json.home.news)
+    {
+        newsList.appendChild(createElement("li", json.home.news[i].item, "newsItem" + i)); 
+    }
+    document.getElementById("content").insertBefore(newsDiv, document.getElementById("footer"));
+
+
+
+}
+
+function loadProjects(json)
+{
+    console.log("LoadProjects function");
+}
+
+function createElementWithStyleProps(type, content, id, props, values)
+{
+    var result = createElement(type, content, id);
+    for (var i in props) {result.style[props[i]] = values[i];}
+    return result;
+}
+
+function createLink(content, id, addr, blankTF)
+{
+    var result = createElement("a", content, id);
+    result.href = addr;
+    if (blankTF) {result.target = "blank";}
+    return result;
+}
+
+function createElement(type, content, id)
+{
+	var element1 = document.createElement(type);
+	element1.innerHTML = content;
+	element1.id = id;
+	
+	return element1;
 }
 
 function loadResume(json)
@@ -53,7 +103,6 @@ function loadResume(json)
         }
         else 
         {
-            //add link functionality for ust & aquinas scholars
             if ((json.resume.education[i]).indexOf("University") >= 0)
             {
                 var ele = createElement("li", "", "edu" + i);
@@ -101,11 +150,11 @@ function loadResume(json)
         }
         else if (typeof json.resume.work[i].title == "object")
         {
-            currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].date, "workDate" + i, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
+            currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].date, "workDate" + i, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
             for (j in json.resume.work[i].title)
             {
-                currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft"], ["block", "left", "2vw"]));
-                currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].resp[j].info, "workResp" + i + "_" + j, ["paddingLeft"], ["4vw"]));
+                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft"], ["block", "left", "2vw"]));
+                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].resp[j].info, "workResp" + i + "_" + j, ["paddingLeft"], ["4vw"]));
             }
         }
         else
@@ -133,28 +182,4 @@ function loadResume(json)
 	    else {leadList.appendChild(createElement("li", json.resume.leadership[i].value, "lead" + i));			}
     }
     document.getElementById("content").insertBefore(leadDiv, document.getElementById("footer"));
-}
-
-function createElementWithStyleProps(type, content, id, props, values)
-{
-    var result = createElement(type, content, id);
-    for (var i in props) {result.style[props[i]] = values[i];}
-    return result;
-}
-
-function createLink(content, id, addr, blankTF)
-{
-    var result = createElement("a", content, id);
-    result.href = addr;
-    if (blankTF) {result.target = "blank";}
-    return result;
-}
-
-function createElement(type, content, id)
-{
-	var element1 = document.createElement(type);
-	element1.innerHTML = content;
-	element1.id = id;
-	
-	return element1;
 }
