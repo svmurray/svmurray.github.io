@@ -132,7 +132,7 @@ function loadResume(json)
     }
     document.getElementById("content").insertBefore(eduDiv, document.getElementById("footer"));
     
-    var workDiv = createElement("div", "", "workDiv");
+    var workDiv = createElementWithStyleProps("div", "", "workDiv", ["marginTop"], ["2em"]);
     workDiv.appendChild(createElement("h3", "Work", "workHead"));
     var linkAr = ["https://www.ge.com/renewableenergy", "http://stthomas.edu", "https://www.dedicatedcomputing.com/", "http://www.lindner-marsack.com/", "http://www.villageofpewaukeewi.us/"]
     
@@ -175,7 +175,7 @@ function loadResume(json)
     }
     document.getElementById("content").insertBefore(workDiv, document.getElementById("footer"));
 
-    var leadDiv = createElement("div", "", "leadDiv");
+    var leadDiv = createElementWithStyleProps("div", "", "leadDiv", ["marginTop"], ["2em"]);
     leadDiv.appendChild(createElement("h3", "Leadership, Activities, & Honors", "leadHead"));
     var leadList = leadDiv.appendChild(createElement("ul", "", "leadList"));
     for (i in json.resume.leadership)
