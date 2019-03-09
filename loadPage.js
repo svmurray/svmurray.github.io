@@ -9,9 +9,9 @@ window.onload = function ()
 	    var jsonData = JSON.parse(this.responseText);
         
         var holdNav = createElement("div","","nav");
-        holdNav.appendChild(createLink("Home", "homeLink", jsonData.links.index, false)); 
-        holdNav.appendChild(createLink("Projects", "projLink", jsonData.links.projects, false)); 
-        holdNav.appendChild(createLink("Resume", "resLink", jsonData.links.resume, false)); 
+        holdNav.appendChild(createLink("Home",      "homeLink", jsonData.links.index, false)); 
+        holdNav.appendChild(createLink("Projects",  "projLink", jsonData.links.projects, false)); 
+        holdNav.appendChild(createLink("Resume",    "resLink",  jsonData.links.resume, false)); 
 
         var holdHead = document.getElementById("header");
 	    holdHead.appendChild(createElement("h2", jsonData.headerData.name, "headName"));
@@ -23,10 +23,10 @@ window.onload = function ()
         holdFoot.appendChild(createElement("span", jsonData.footerData.text, "footText"));
         holdFoot.appendChild(createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true));
         
-        if(document.getElementById("title").innerHTML == "Projects") {loadProjects(jsonData);}
-        else if (document.getElementById("title").innerHTML == "Home") {loadHome(jsonData);}
-        else if (document.getElementById("title").innerHTML == "Resume") {loadResume(jsonData);}
-	  }
+        if(      document.getElementById("title").innerHTML == "Projects")  {loadProjects(jsonData);}
+        else if (document.getElementById("title").innerHTML == "Home")      {loadHome(jsonData);}
+        else if (document.getElementById("title").innerHTML == "Resume")    {loadResume(jsonData);}
+	  } 
 	};
 	req.open("GET", "index.json", true);
 	req.send();
@@ -34,29 +34,16 @@ window.onload = function ()
 
 function loadHome(json)
 {
-    var picDiv = createElement("div", "", "picDiv");
-    //createImage
-    document.getElementById("content").insertBefore(picDiv, document.getElementById("footer"));
-
-    var pDiv = createElement("div", "", "pDiv");
+    var pDiv = createElement("div", "", "pDiv");   
+    pDiv.appendChild(createImageWithProps("selfPic", "me.jpg", "Sam Murray", ["width", "float", "marginRight", "marginBottom"], ["10vw", "left", "1vw", "1em"]));
 	pDiv.appendChild(createElement("h3", "About Me:", "parHead"));
-    for (var i in json.home.paragraphs)
-    {
-        pDiv.appendChild(createElementWithStyleProps("p", json.home.paragraphs[i].item, "pDiv" + i, ["textIndent"], ["2rem"])); 
-    }
+    for (var i in json.home.paragraphs) {pDiv.appendChild(createElementWithStyleProps("p", json.home.paragraphs[i].item, "pDiv" + i, ["textIndent"], ["2rem"]));}
     document.getElementById("content").insertBefore(pDiv, document.getElementById("footer"));
-
     var newsDiv = createElementWithStyleProps("div", "", "newsDiv", ["marginTop"], ["2rem"]);
 	newsDiv.appendChild(createElement("h3", "Recent News:", "newsHead"));
     var newsList = newsDiv.appendChild(createElement("ul", "", "newsList"));
-    for (var i in json.home.news)
-    {
-        newsList.appendChild(createElement("li", json.home.news[i].item, "newsItem" + i)); 
-    }
+    for (var i in json.home.news) {newsList.appendChild(createElement("li", json.home.news[i].item, "newsItem" + i)); }
     document.getElementById("content").insertBefore(newsDiv, document.getElementById("footer"));
-
-
-
 }
 
 function loadProjects(json)
@@ -65,9 +52,24 @@ function loadProjects(json)
 	projDiv.appendChild(createElement("h3", "Projects:", "projHead"));
 	for (var i in json.projects)
 	{
-		projDiv.appendChild(createElement("div", json.projects[i].title, "proj" + i));
+//    	var currDiv = createElementWithStyleProps("div", "", "projDiv" + i, ["height"], ["5em"]);
+    	var currDiv = createElement("div", "", "projDiv" + i);
+	    currDiv.appendChild(createImageWithProps("projImg" + i, "me.jpg", json.projects[i].title,["width", "float", "marginRight", "clear", "paddingBottom"], ["3em", "left", "1vw", "left", "1em"]));
+	    currDiv.appendChild(createElementWithStyleProps("div", json.projects[i].title, "projTit" + i, ["fontWeight"], ["bold"]));
+	    currDiv.appendChild(createElement("div", json.projects[i].desc, "projDesc" + i));
+	    currDiv.appendChild(createElementWithStyleProps("div", "", "fill" + i, ["clear", "marginBottom"], ["both", "1em"]));
+		projDiv.appendChild(currDiv);
 	}
     document.getElementById("content").insertBefore(projDiv, document.getElementById("footer"));
+}
+
+function createImageWithProps(id, src, alt, props, vals)
+{
+    var result = createElement("img", "", id);
+    result.src = src;
+    result.alt = alt;
+    for (var i in props) {result.style[props[i]] = vals[i];}
+    return result;
 }
 
 function createElementWithStyleProps(type, content, id, props, values)
@@ -90,7 +92,6 @@ function createElement(type, content, id)
 	var element1 = document.createElement(type);
 	element1.innerHTML = content;
 	element1.id = id;
-	
 	return element1;
 }
 
@@ -116,7 +117,6 @@ function loadResume(json)
                 var ele = createElement("li", "", "edu" + i);
                 ele.appendChild(createLink(json.resume.education[i], "ustLink", "http://stthomas.edu", true));
                 eduList.appendChild(ele);
-
             }
             else if (json.resume.education[i].indexOf("Aquinas") >= 0)
             {
@@ -124,14 +124,10 @@ function loadResume(json)
                 ele.appendChild(createLink(json.resume.education[i], "aqLink", "https://www.stthomas.edu/aquinasscholars/", true));
                 eduList.appendChild(ele);
             }
-            else
-            {
-                eduList.appendChild(createElement("li", json.resume.education[i], "edu" + i));
-            }
+            else {eduList.appendChild(createElement("li", json.resume.education[i], "edu" + i));}
         }
     }
     document.getElementById("content").insertBefore(eduDiv, document.getElementById("footer"));
-    
     var workDiv = createElementWithStyleProps("div", "", "workDiv", ["marginTop"], ["2em"]);
     workDiv.appendChild(createElement("h3", "Work", "workHead"));
     var linkAr = ["https://www.ge.com/renewableenergy", "http://stthomas.edu", "https://www.dedicatedcomputing.com/", "http://www.lindner-marsack.com/", "http://www.villageofpewaukeewi.us/"]
@@ -144,15 +140,13 @@ function loadResume(json)
         var ele = createElementWithStyleProps("li", "", "link" + i, ["paddingTop", "display", "cssFloat"], [".5rem", "block", "left"]);
         ele.appendChild(createLink(json.resume.work[i].comp, json.resume.work[i].comp + "Link", "https://www.stthomas.edu/aquinasscholars/", true));
         currEl.appendChild(ele);
-
         currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].loca, "workLoca" + i, ["display", "textAlign", "cssFloat", "paddingTop"], ["block", "right", "right", ".5rem"]));
-        
         if (typeof json.resume.work[i].date == "object")
         {
             for (j in json.resume.work[i].date)
             {
-                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].date[j].time, "workDate" + i + "_" + j, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
-                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft", "fontStyle"], ["block", "left", "2vw", "italic"]));
+                currEl.appendChild(createElementWithStyleProps("div",json.resume.work[i].date[j].time,"workDate"+i+"_"+j,["clear","display","textAlign","cssFloat"],["both","block","right","right"]));
+                currEl.appendChild(createElementWithStyleProps("div",json.resume.work[i].title[j].data,"workTit"+i+"_"+j,["display","clear","paddingLeft","fontStyle"],["block","left","2vw","italic"]));
                 currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].resp[j].info, "workResp" + i + "_" + j, ["paddingLeft"], ["4vw"]));
             }
         }
@@ -161,7 +155,7 @@ function loadResume(json)
             currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].date, "workDate" + i, ["clear", "display", "textAlign", "cssFloat"], ["both", "block", "right", "right"]));
             for (j in json.resume.work[i].title)
             {
-                currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].title[j].data, "workTit" + i + "_" + j, ["display", "clear", "paddingLeft", "fontStyle"], ["block", "left", "2vw", "italic"]));
+                currEl.appendChild(createElementWithStyleProps("div",json.resume.work[i].title[j].data,"workTit"+i+"_"+j,["display","clear","paddingLeft","fontStyle"],["block","left","2vw","italic"]));
                 currEl.appendChild(createElementWithStyleProps("div", json.resume.work[i].resp[j].info, "workResp" + i + "_" + j, ["paddingLeft"], ["4vw"]));
             }
         }
@@ -187,7 +181,12 @@ function loadResume(json)
 	        for (var j in json.resume.leadership[i].data) {currList.appendChild(createElement("li", json.resume.leadership[i].data[j].info, "lead" + i + "_" + j));}
 	        leadList.appendChild(currEl);
 	    }
-	    else {leadList.appendChild(createElement("li", json.resume.leadership[i].value, "lead" + i));			}
+	    else {leadList.appendChild(createElement("li", json.resume.leadership[i].value, "lead" + i));}
     }
     document.getElementById("content").insertBefore(leadDiv, document.getElementById("footer"));
+    var skillDiv = createElementWithStyleProps("div", "", "skillDiv", ["marginTop"], ["2em"]);
+    skillDiv.appendChild(createElement("h3", "Skills", "skillHead"));
+    var skillList = skillDiv.appendChild(createElement("ul", "", "skillList"));
+    for (i in json.resume.skills) {skillList.appendChild(createElement("li", json.resume.skills[i].value, "skill" + i));}
+    document.getElementById("content").insertBefore(skillDiv, document.getElementById("footer")); 
 }

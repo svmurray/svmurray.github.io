@@ -23,64 +23,73 @@
     "projects":
     [
         {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
-            "title": "Jazmyn",
-            "desc": "dummyVal3"
+            "title": "Jazmyn - Voice Controlled Web Broswing Plugin",
+            "desc": "For Artificial Intelligence, my partner and I utilized an existing voice-recognition API but created functionality where vocalized commands could be translated to machine actions, recorded, and recalled.",
+            "images": 
+            [
+                {"thumbnail": "dummyVal"},
+                {"fullRes": [{"item": "src"}, {"item": "src"}, {"item": "src"}, {"item": "src"}]}
+            ]
+
         },
         {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
-            "title": "Simulated Pipelined Processor",
-            "desc": "dummyVal3"
-        },
-        {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
             "title": "Peer-2-Peer Chat Server w/Group Message Capabilities",
-            "desc": "dummyVal3"
+            "desc": "For Object-Oriented Design, I created Java code that made and hosted a chat server on multicast sockets in an existing network that would identify other users running the same program and allowed for exchange of direct messages or group messages",
+            "images": 
+            [
+                {"thumbnail": "dummyVal"},
+                {"fullRes": [{"item": "src"}, {"item": "src"}, {"item": "src"}, {"item": "src"}]}
+            ]
+
         },
         {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
             "title": "History Sniffing Chess Board",
-            "desc": "dummyVal3"
+            "desc": "For Information Security, I created a webpage that mimicked a CAPCHA but could determine if the unassuming user had been to any subset of a list of links and would supply a message dependent on what parts of the chess board were clicked.",
+            "images": 
+            [
+                {"thumbnail": "dummyVal"},
+                {"fullRes": [{"item": "src"}, {"item": "src"}, {"item": "src"}, {"item": "src"}]}
+            ]
+
         },
         {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
-            "title": "Operating Systems Simulated Scheduler",
-            "desc": "dummyVal3"
-        },
-        {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
-            "title": "Virtual to Physical Memory Simulator",
-            "desc": "dummyVal3"
-        },
-        {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
             "title": "Plagues, Prophets and People: High Priest Visual Journal",
-            "desc": "dummyVal3"
+            "desc": "For a Theology class that I took in Israel, I created a Visual Journal to document the life of ancient Jewish High Priests and the restrictions that they encountered in daily life",
+            "images": 
+            [
+                {"thumbnail": "dummyVal"},
+                {"fullRes": [{"item": "src"}, {"item": "src"}, {"item": "src"}, {"item": "src"}]}
+            ]
+
         },
         {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
             "title": "Intercultural Identity Paper",
-            "desc": "dummyVal3"
+            "desc": "For Intercultural Communication, I wrote a paper exploring and defining Intercultural Identity which is the simoultaneous and continous definition of 'us' versus 'them' in all of life's contexts",
+            "images": 
+            [
+                {"thumbnail": "dummyVal"},
+                {"fullRes": [{"item": "src"}, {"item": "src"}, {"item": "src"}, {"item": "src"}]}
+            ]
+
         },
         {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
             "title": "Center for the Common Good",
-            "desc": "dummyVal3"
+            "desc": "The entirety of Project Management was seeing a project through its entire lifecycle. My group members and I were paired with the Center of the Common Good at the University of St. Thomas. They were looking for help in engagement with their main users - Students, Faculty, and Community Partner Service Organizations. We created frameworks for them to implement that would improve engagement in all 3 areas.",
+            "images": 
+            [
+                {"thumbnail": "dummyVal"},
+                {"fullRes": [{"item": "src"}, {"item": "src"}, {"item": "src"}, {"item": "src"}]}
+            ]
+
         },
         {
-            "thumbnail": "dummyVal",
-            "bigPic": "dummyVal1",
             "title": "Net Neutrality Investigation",
-            "desc": "dummyVal3"
+            "desc": "For Business Law, my group members and I investigated the potential implications that could accompany a policy change regarding Net Neutrality",
+            "images": 
+            [
+                {"thumbnail": "dummyVal"},
+                {"fullRes": [{"item": "src"}, {"item": "src"}, {"item": "src"}, {"item": "src"}]}
+            ]
         }
     ],
     
@@ -97,7 +106,9 @@
         [
             {"item": "Eligible for Summa Cum Laude Oral Examination (will be taken on April 15th, 2019"},
             {"item": "Returned from Israel/Jordan Theology Trip on January 27th, 2019"},
-            {"item": ""}
+            {"item": "Accepted job in Consulting Development Program at Optum. Will begin work July, 15 2017"},
+            {"item": "Planned post-graduation vacation to New Zealand for early June"},
+            {"item": "Scheduled to graduate May 24th, 2019"}
         ]
     },
     
@@ -208,8 +219,8 @@
         ],
 
         "skills": [
-            {"value": "Word, Excel (including Palisade Suite), PowerPoint, Access"},
-            {"value": "Coding: MATLAB, Java, HTML5, Javascript, CSS, SQL, Perl, some C++"}
+            {"value": "Microsoft Office: Word, Excel (including Palisade Suite), PowerPoint, Access"},
+            {"value": "Coding: MATLAB, Java, HTML5, Javascript, CSS, SQL, Perl, BASH scripting, some C++"}
         ]
     }
 }
