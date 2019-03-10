@@ -56,6 +56,22 @@ html
     font-size: 100%;
 }
 
+.lbImg:hover
+{
+    cursor: grab;
+}
+
+#ddm
+{
+    position: relative;
+    display: inline-block;
+}
+
+#ddm:hover .ddContainer
+{
+    display: block;
+}
+
 a
 {
     color: #333333;

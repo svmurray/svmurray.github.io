@@ -23,6 +23,13 @@ window.onload = function ()
         holdFoot.appendChild(createElement("span", jsonData.footerData.text, "footText"));
         holdFoot.appendChild(createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true));
         
+        var ddm = createElement("div", "", "ddDiv");
+        ddm.appendChild(createElement("button", "Menu", "ddButton"));
+        var ddc = createElement("div", "", "ddContainer");
+        ddc.appendChild(createElement("a", "test", "option1"));
+        ddm.appendChild(ddc);
+        holdFoot.appendChild(ddm); //dropdown menu
+        
         if(      document.getElementById("title").innerHTML == "Projects")  {loadProjects(jsonData);}
         else if (document.getElementById("title").innerHTML == "Home")      {loadHome(jsonData);}
         else if (document.getElementById("title").innerHTML == "Resume")    {loadResume(jsonData);}
@@ -35,7 +42,7 @@ window.onload = function ()
 function loadHome(json)
 {
     var pDiv = createElement("div", "", "pDiv");   
-    pDiv.appendChild(createImageWithProps("selfPic", "me.jpg", "Sam Murray", ["width", "float", "marginRight", "marginBottom"], ["10vw", "left", "1vw", "1em"]));
+    pDiv.appendChild(createImageWithProps("selfPic", "me.jpg", "Sam Murray", ["height", "float", "marginRight", "marginBottom"], ["15em", "left", "1vw", "1em"]));
 	pDiv.appendChild(createElement("h3", "About Me:", "parHead"));
     for (var i in json.home.paragraphs) {pDiv.appendChild(createElementWithStyleProps("p", json.home.paragraphs[i].item, "pDiv" + i, ["textIndent"], ["2rem"]));}
     document.getElementById("content").insertBefore(pDiv, document.getElementById("footer"));
@@ -52,15 +59,27 @@ function loadProjects(json)
 	projDiv.appendChild(createElement("h3", "Projects:", "projHead"));
 	for (var i in json.projects)
 	{
-//    	var currDiv = createElementWithStyleProps("div", "", "projDiv" + i, ["height"], ["5em"]);
     	var currDiv = createElement("div", "", "projDiv" + i);
-	    currDiv.appendChild(createImageWithProps("projImg" + i, "me.jpg", json.projects[i].title,["width", "float", "marginRight", "clear", "paddingBottom"], ["3em", "left", "1vw", "left", "1em"]));
+    	var currImg = createImageWithProps("projImg" + i, json.projects[i].images[1].item, json.projects[i].title,["width", "float", "marginRight", "clear", "verticalAlign"], ["3em", "left", "1vw", "left", "middle"]);
+    	currImg.onclick = lb;
+    	currImg.className = "lbImg";
+    	currImg.dataLightbox = "testSet" + i;
+    	
+    	/*LightBox Shit goes here*/
+    	
+    	
+	    currDiv.appendChild(currImg);
 	    currDiv.appendChild(createElementWithStyleProps("div", json.projects[i].title, "projTit" + i, ["fontWeight"], ["bold"]));
 	    currDiv.appendChild(createElement("div", json.projects[i].desc, "projDesc" + i));
 	    currDiv.appendChild(createElementWithStyleProps("div", "", "fill" + i, ["clear", "marginBottom"], ["both", "1em"]));
 		projDiv.appendChild(currDiv);
 	}
     document.getElementById("content").insertBefore(projDiv, document.getElementById("footer"));
+}
+
+function lb()
+{
+    window.alert("test");
 }
 
 function createImageWithProps(id, src, alt, props, vals)
