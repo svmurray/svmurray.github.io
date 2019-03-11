@@ -24,11 +24,16 @@ window.onload = function ()
         holdFoot.appendChild(createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true));
         
         var ddm = createElement("div", "", "ddDiv");
-        ddm.appendChild(createElement("button", "Menu", "ddButton"));
+        ddm.appendChild(createElement("button", "Translate", "ddButton"));
         var ddc = createElement("div", "", "ddContainer");
-        ddc.appendChild(createElement("a", "test", "option1"));
-        ddm.appendChild(ddc);
-        holdFoot.appendChild(ddm); //dropdown menu
+        
+        var data = ["1", "2", "3"];
+        for (var i in data)
+        {
+            ddc.appendChild(createElement("div", data[i] + "***", "option" + i));
+            ddm.appendChild(ddc);
+        }
+        holdNav.appendChild(ddm); //dropdown menu
         
         if(      document.getElementById("title").innerHTML == "Projects")  {loadProjects(jsonData);}
         else if (document.getElementById("title").innerHTML == "Home")      {loadHome(jsonData);}

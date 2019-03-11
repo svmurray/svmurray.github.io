@@ -1,16 +1,16 @@
 * {
+    font-family: Times New Roman, Helvetica, Arial, sans-serif;
     margin: 0 auto;
-    font-family: Times New Roman, Helvitica, Arial, sans-serif;
 }
 
 #header
 {
-	position: fixed;
-	width: 100vw;
 	background-color: rgb(11,165,60);
-	text-align: center;
-	padding-bottom:1vh;
 	font-size: 150%;
+	padding-bottom:1vh;
+	position: fixed;
+	text-align: center;
+	width: 100vw;
 }
 
 #header a
@@ -19,71 +19,66 @@
     margin: 1vh 1vw 1vh 0vw;
 }
 
-#header a:hover
-{
-	color: white;
-}
-
-body
-{
-	background-color: #e6e6e6;
-}
-
 #footer
 {
+	background-color: black;
 	color: white;
 	font-size: 90%;
-	background-color: black;
 	margin-bottom: 1rem;
+	margin-top: 1rem;
 	padding: 1rem;
 	text-align: center;
-	margin-top: 1rem;
-}
-
-#footer a
-{
-    color:white;
-}
-
-#footer a:hover
-{
-	color: #31ede6;
 }
 
 html 
 {
-    width: 100%;
     font-size: 100%;
+    width: 100%;
 }
 
-.lbImg:hover
+#ddDiv
 {
-    cursor: grab;
-}
-
-#ddm
-{
-    position: relative;
     display: inline-block;
+    position: relative;
 }
 
-#ddm:hover .ddContainer
+#ddContainer
 {
+    display: none;
+    visibility: hidden;
+    z-index: -1;
+    position: absolute;
+    border-radius: 10px;
+    transition: visibility 3s;
+}
+
+#ddDiv:hover #ddContainer, #ddDiv:focus #ddContainer, #ddDiv:focus-within #ddContainer
+
+
+{
+
+    transition: visibility 3s;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    cursor: grab;
     display: block;
-}
-
-a
-{
-    color: #333333;
-}
-
-a:hover
-{
-color: #841534;
+    font-size: 62.5%
+    min-width: 80px;
+    padding: 12px 16px;
+    visibility: visible;
+    z-index: 1;
 }
 
 #content
 {
-	width: 70vw;
 	padding-top: 7em;
+	width: 70vw;
 }
+
+a {color: #333333;}
+a:hover {color: #841534;}
+body {background-color: #e6e6e6;}
+#footer a {color:white;}
+#footer a:hover {color: #31ede6;}
+#header a:hover {color: white;}
+.lbImg:hover {cursor: grab;}

@@ -117,7 +117,7 @@
     {
         "education":
         {
-            "school": "University of St. Thomas",
+            "school": "University of St. Thomas - Class of 2019",
             "csMajor": "Major: Computer Science (B.A.)",
             "scomMajor": "Major: Business Administration - Supply Chain & Operations Management (B.A.)",
             "minor": "Minor: Data Analytics",
@@ -127,7 +127,7 @@
             "studyAbroad" :
             {
                 "value": "Study Abroad",
-                "jterm": "January-Term: Theology 101 (Rome ‘16), UMAIE English (France & Italy 17), UST Theology 490 (Israel & Jordan ’19)",
+                "jterm": "January-Term: Theology 101 (Rome ‘16), UMAIE English (France & Italy '17), UST Theology 490 (Israel & Jordan ’19)",
                 "semester": "UST London Business Semester (Fall ’17)"
             }
         },
