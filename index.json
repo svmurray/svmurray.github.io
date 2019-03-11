@@ -137,6 +137,7 @@
                 "comp": "General Electric - GE Renewables",
                 "loca": "Schenectady, New York",
                 "date": "June 2018-Sept 2018",
+                "link": "https://www.ge.com/renewableenergy",
                 "title":
                 [
                     {"data": "Technical EID Intern - Nacelle Transfer Function Root Cause Analysis"},
@@ -151,6 +152,7 @@
             {
                 "comp": "University of St. Thomas",
                 "loca": "St. Paul, Minnesota",
+                "link": "http://stthomas.edu",
                 "date":
                 [
                     {"time": "Nov 2016-Sept 2017"},
@@ -175,6 +177,7 @@
                 "loca": "Waukesha, Wisconsin",
                 "date": "June 2016-Sept 2016",
                 "title": "Application Systems Analyst Intern",
+                "link": "https://www.dedicatedcomputing.com/",
                 "resp": "Assisted IT and Analyst teams with Resource Management and implementation of a new ERP system."
             },
             {
@@ -182,6 +185,7 @@
                 "loca": "Milwaukee, Wisconsin",
                 "date": "June 2015-Sept 2015",
                 "title": "File Clerk",
+                "link": "http://www.lindner-marsack.com/",
                 "resp": "Scanned, filed, and organized client files."
             },
             {
@@ -189,6 +193,7 @@
                 "loca": "Pewaukee, Wisconsin",
                 "date": "Sporadic Dates 2014-2015",
                 "title": "Election Inspector",
+                "link": "http://www.villageofpewaukeewi.us/",
                 "resp": "Monitored election proceedings at the local polling station."
             }
         ],
