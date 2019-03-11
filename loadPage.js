@@ -154,15 +154,12 @@ function loadResume(json)
     document.getElementById("content").insertBefore(eduDiv, document.getElementById("footer"));
     var workDiv = createElementWithStyleProps("div", "", "workDiv", ["marginTop"], ["2em"]);
     workDiv.appendChild(createElement("h3", "Work", "workHead"));
-    var linkAr = ["https://www.ge.com/renewableenergy", "http://stthomas.edu", "https://www.dedicatedcomputing.com/", "http://www.lindner-marsack.com/", "http://www.villageofpewaukeewi.us/"]
-    
     var workList = workDiv.appendChild(createElementWithStyleProps("ul", "", "workList", ["listStyle", "paddingLeft"], ["none", "1vw"]));
     for (i in json.resume.work)
     {
         var currEl = createElement("li", "", "work" + i);
-        
         var ele = createElementWithStyleProps("li", "", "link" + i, ["paddingTop", "display", "cssFloat"], [".5rem", "block", "left"]);
-        ele.appendChild(createLink(json.resume.work[i].comp, json.resume.work[i].comp + "Link", "https://www.stthomas.edu/aquinasscholars/", true));
+        ele.appendChild(createLink(json.resume.work[i].comp, json.resume.work[i].comp + "Link", json.resume.work[i].link, true));
         currEl.appendChild(ele);
         currEl.appendChild(createElementWithStyleProps("span", json.resume.work[i].loca, "workLoca" + i, ["display", "textAlign", "cssFloat", "paddingTop"], ["block", "right", "right", ".5rem"]));
         if (typeof json.resume.work[i].date == "object")
