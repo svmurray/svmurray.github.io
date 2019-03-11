@@ -47,7 +47,7 @@ window.onload = function ()
 function loadHome(json)
 {
     var pDiv = createElement("div", "", "pDiv");   
-    pDiv.appendChild(createImageWithProps("selfPic", "me.jpg", "Sam Murray", ["height", "float", "marginRight", "marginBottom"], ["15em", "left", "1vw", "1em"]));
+    pDiv.appendChild(createImageWithProps("selfPic", json.home.picture, "Sam Murray", ["height", "float", "marginRight", "marginBottom"], ["15em", "left", "1vw", "1em"]));
 	pDiv.appendChild(createElement("h3", "About Me:", "parHead"));
     for (var i in json.home.paragraphs) {pDiv.appendChild(createElementWithStyleProps("p", json.home.paragraphs[i].item, "pDiv" + i, ["textIndent"], ["2rem"]));}
     document.getElementById("content").insertBefore(pDiv, document.getElementById("footer"));
