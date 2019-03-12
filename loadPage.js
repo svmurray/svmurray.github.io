@@ -12,18 +12,12 @@ window.onload = function ()
 	    {
 	        if (this.readyState == 4 && this.status == 200) 
 	        {
-	            if (typeof this.responseText == "string")
-	            {
+	           /* if (typeof this.responseText == "string")
+	            {*/
 	                var xmlObj = (new window.DOMParser()).parseFromString(this.responseText, "text/xml");
 	                var langObj;
-	                if (xmlObj.activeElement != undefined && xmlObj.activeElement != null)
-	                {
-	                    langObj = xmlObj.activeElement.childNodes[1].childNodes;
-	                }
-	                else
-	                {
-	                    langObj = xmlObj.getElementsByTagName("langs")[0].getElementsByTagName("Item");
-	                }
+	                if (xmlObj.activeElement != undefined && xmlObj.activeElement != null){langObj = xmlObj.activeElement.childNodes[1].childNodes;}
+	                else {langObj = xmlObj.getElementsByTagName("langs")[0].getElementsByTagName("Item");}
                     var ddm = createElement("div", "", "ddDiv");
                     ddm.appendChild(createElement("button", "Translate", "ddButton", "translatable"));
                     var ddc = createElement("div", "", "ddContainer");
@@ -38,7 +32,7 @@ window.onload = function ()
                     }
                     ddm.appendChild(ddc);
                     holdNav.appendChild(ddm);
-	            }
+	            //}
             }
             else if (this.readyState == 4) {console.log(this.status);};
         };
@@ -124,10 +118,7 @@ function getJSON(addr, id)
 		{
 			if(req.readyState ==4 && req.status ==200)
 			{
-			    if (id == undefined)
-			    {
-			        console.log(JSON.parse(this.responseText));
-			    }
+			    if (id == undefined) {console.log(JSON.parse(this.responseText));}
 			    else
 			    {
 				    response = [JSON.parse(this.responseText), id];
