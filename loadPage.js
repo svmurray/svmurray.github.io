@@ -15,7 +15,15 @@ window.onload = function ()
 	            if (typeof this.responseText == "string")
 	            {
 	                var xmlObj = (new window.DOMParser()).parseFromString(this.responseText, "text/xml");
-	                var langObj = xmlObj.activeElement.childNodes[1].childNodes;
+	                var langObj;
+	                if (xmlObj.activeElement != undefined)
+	                {
+	                    langObj = xmlObj.activeElement.childNodes[1].childNodes;
+	                }
+	                else
+	                {
+	                    langObj = xmlObj.getElementsByTagName("langs")[0].getElementsByTagName("Item");
+	                }
                     var ddm = createElement("div", "", "ddDiv");
                     ddm.appendChild(createElement("button", "Translate", "ddButton", "translatable"));
                     var ddc = createElement("div", "", "ddContainer");
