@@ -27,7 +27,7 @@
             "desc": "For Artificial Intelligence, my partner and I utilized an existing voice-recognition API but created functionality where vocalized commands could be translated to machine actions, recorded, and recalled.",
             "images": 
             [
-                {"item": "thumb"}, 
+                {"item": "images/webapi.jpg"}, 
                 {"item": "images/webAPI.jpg"}, 
                 {"item": "images/microphone.jpg"}
             ]
@@ -37,7 +37,7 @@
             "desc": "For Object-Oriented Design, I created Java code that made and hosted a chat server on multicast sockets in an existing network that would identify other users running the same program and allowed for exchange of direct messages or group messages",
             "images": 
             [
-                {"item": "thumb"}, 
+                {"item": "images/cserverpixelated.jpg"}, 
                 {"item": "images/cServerPixelated.jpg"}, 
                 {"item": "images/CServer.jpg"}
             ]
@@ -48,7 +48,7 @@
             "desc": "For Information Security, I created a webpage that mimicked a CAPCHA but could determine if the unassuming user had been to any subset of a list of links and would supply a message dependent on what parts of the chess board were clicked.",
             "images": 
             [
-                {"item": "thumb"}, 
+                {"item": "images/chessboard.jpg"}, 
                 {"item": "images/chessBoard.jpg"}, 
                 {"item": "images/hSniff.jpg"}
             ]
@@ -58,7 +58,7 @@
             "desc": "For a Theology class that I took in Israel, I created a Visual Journal to document the life of ancient Jewish High Priests and the restrictions that they encountered in daily life",
             "images": 
             [
-                {"item": "thumb"}, 
+                {"item": "images/qumran(1).jpg"}, 
                 {"item": "images/qumran.jpg"}, 
                 {"item": "images/sarc.jpg"}
             ]
@@ -68,7 +68,7 @@
             "desc": "For Intercultural Communication, I wrote a paper exploring and defining Intercultural Identity which is the simoultaneous and continous definition of 'us' versus 'them' in all of life's contexts",
             "images": 
             [
-                {"item": "thumb"}, 
+                {"item": "images/ici(1).jpg"}, 
                 {"item": "images/ici.jpg"}, 
                 {"item": "images/iciQuote.jpg"}
             ]
@@ -78,7 +78,7 @@
             "desc": "The entirety of Project Management was seeing a project through its entire lifecycle. My group members and I were paired with the Center of the Common Good at the University of St. Thomas. They were looking for help in engagement with their main users - Students, Faculty, and Community Partner Service Organizations. We created frameworks for them to implement that would improve engagement in all 3 areas.",
             "images": 
             [
-                {"item": "thumb"}, 
+                {"item": "images/ccg(1).jpg"}, 
                 {"item": "images/ccg.jpg"}, 
                 {"item": "images/ccgVol.jpg"}
             ]
@@ -88,7 +88,7 @@
             "desc": "For Business Law, my group members and I investigated the potential implications that could accompany a policy change regarding Net Neutrality",
             "images": 
             [
-                {"item": "thumb"}, 
+                {"item": "images/cpis(1).jpg"}, 
                 {"item": "images/cpis.jpg"}, 
                 {"item": "images/Net-Neutrality.jpg"}
             ]
