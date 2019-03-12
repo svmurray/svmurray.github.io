@@ -142,10 +142,10 @@ function getJSON(addr, id)
 			            error = "422 Error: The text cannot be translated"
 			        case 501:
 			            error = "501 error: The specified translation direction is not supported"
-	            }
-	            if (error == undefined) {error = "Unexpected Error";}
+	            	    }
+	            	    if (error == undefined) {error = "Unexpected Error";}
 			    window.alert(error);
-		    }
+		    	}
 		}
 		req.open("GET", addr, true);
 		req.send();
