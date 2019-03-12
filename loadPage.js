@@ -16,7 +16,7 @@ window.onload = function ()
 	            {
 	                var xmlObj = (new window.DOMParser()).parseFromString(this.responseText, "text/xml");
 	                var langObj;
-	                if (xmlObj.activeElement != undefined)
+	                if (xmlObj.activeElement != undefined && xmlObj.activeElement != null)
 	                {
 	                    langObj = xmlObj.activeElement.childNodes[1].childNodes;
 	                }
