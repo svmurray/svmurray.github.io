@@ -17,6 +17,7 @@
 {
     color: #333333;
     margin: 1vh 1vw 1vh 0vw;
+    transition: color, .2s;
 }
 
 #footer
@@ -28,6 +29,7 @@
 	margin-top: 1rem;
 	padding: 1rem;
 	text-align: center;
+    transition: color, .2s;
 }
 
 html 
@@ -56,7 +58,6 @@ html
 
 
 {
-
     transition: visibility 3s;
     background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -67,6 +68,8 @@ html
     padding: 12px 16px;
     visibility: visible;
     z-index: 1;
+    overflow: auto;
+    max-height: 200px;
 }
 
 #content
@@ -75,10 +78,18 @@ html
 	width: 70vw;
 }
 
+#selfPic
+{
+    height: 15em;
+    transition: all 3s;
+}
+
+#selfPic:hover {height: 20em;}
+#header a:hover {color: white;}
+
 a {color: #333333;}
 a:hover {color: #841534;}
 body {background-color: #e6e6e6;}
 #footer a {color:white;}
 #footer a:hover {color: #31ede6;}
-#header a:hover {color: white;}
 .lbImg:hover {cursor: grab;}
