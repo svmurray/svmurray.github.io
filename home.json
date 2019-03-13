@@ -1,0 +1,20 @@
+{
+    "home":
+    {
+        "picture": "me.jpg",
+        "paragraphs":
+        [
+            {"item": "I am currently a senior at the University of St. Thomas and will graduate in May 2019 with degrees in Computer Science (B.A.) as well as Supply Chain & Operations Management (B.A.), with a minor in Data Analytics. At St. Thomas I played rugby all 4 years. In my time, I served as match secretary for 1 semester, and as captain for 1 year. I also am a member of the Supply Chain & Operations Club."},
+            {"item": "Professionally, I would eventually like to get into Data Science/Data Analytics, but I am beginning my career consulting with Optum in Eden Prairie Minnesota."},
+            {"item": "In my free time, I enjoy watching sports of all kinds, I am a fan of the Milwaukee Brewers and Bucks, Wisconsin Badgers, Minnesota Vikings and Wild, Arsenal FC, Saracens RFC. We are currently approaching the best sports time of the year with March Madness right around the corner."}
+        ],
+        "news":
+        [
+            {"item": "Eligible for Summa Cum Laude Oral Examination (will be taken on April 15th, 2019)"},
+            {"item": "Returned from Israel/Jordan Theology Trip on January 27th, 2019"},
+            {"item": "Accepted job in Consulting Development Program at Optum. Will begin work July, 15 2017"},
+            {"item": "Planned post-graduation vacation to New Zealand for early June"},
+            {"item": "Scheduled to graduate May 24th, 2019"}
+        ]
+    }
+}

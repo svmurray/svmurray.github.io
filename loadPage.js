@@ -15,7 +15,7 @@ window.onload = function () {
                 var ddc = createElement("div", "", "ddContainer");
                 for (var i in langObj) {
                     if (langObj[i].attributes != undefined) {
-                        var curr = createElement("div", langObj[i].getAttribute("value"), langObj[i].getAttribute("key"), "ddOpt");
+                        var curr = createElement("div", langObj[i].getAttribute("value"), langObj[i].getAttribute("key"), "ddOpt translatable");
                         ddc.appendChild(curr);
                         curr.onclick = translate;
                     }
@@ -33,9 +33,9 @@ window.onload = function () {
         appendChildren(holdHead, [createElement("h2", jsonData.headerData.name, "headName"), createLink(jsonData.headerData.email, "email", "mailto:" + jsonData.headerData.email, "blank"), createElement("span", jsonData.headerData.phone, "phone"), holdNav]);
         var holdFoot = document.getElementById("footer");
         appendChildren(holdFoot, [createElement("span", jsonData.footerData.text, "footText", "translatable"), createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true)]);
-        if(      document.getElementById("title").innerHTML == "Projects")  {loadProjects(jsonData);}
-        else if (document.getElementById("title").innerHTML == "Home")      {loadHome(jsonData);}
-        else if (document.getElementById("title").innerHTML == "Resume")    {loadResume(jsonData);}
+        if(      document.getElementById("title").innerHTML == "Projects")  {getJSON("projects.json").then(results => {loadProjects(results)});}
+        else if (document.getElementById("title").innerHTML == "Home")      {getJSON("home.json").then(results => {loadHome(results)});}
+        else if (document.getElementById("title").innerHTML == "Resume")    {getJSON("resume.json").then(results => {loadResume(results)});}
 	  } 
 	};
 	req.open("GET", "index.json", true);
@@ -62,6 +62,7 @@ function loadHome(json) {
 }
 
 function loadProjects(json) {
+console.log(json);
     var projDiv = createElement("div", "", "projDiv");
 	projDiv.appendChild(createElement("h3", "Projects:", "projHead", "translatable"));
 	for (var i in json.projects) {
@@ -111,7 +112,7 @@ function getJSON(addr, id) {
 		var req = new XMLHttpRequest();
 		req.onreadystatechange = function() {
 			if(req.readyState ==4 && req.status ==200) {
-			    if (id == undefined) {console.log(JSON.parse(this.responseText));}
+			    if (id == undefined) {resolve(JSON.parse(this.responseText));}
 			    else {resolve([JSON.parse(this.responseText), id]);}
 			}
 			else if (req.status == 4) {
@@ -211,6 +212,7 @@ function createElement(type, content, id, className) {
 	element1.innerHTML = content;
 	element1.id = id;
 	element1.className = className;
+	element1.engData = content;
 	return element1;
 }
 
@@ -253,5 +255,5 @@ function prevPic(info) {
 
 function translate() {
     var els = document.getElementsByClassName("translatable");
-    for (var i in els) {if(els[i].id != undefined) {getJSON("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190311T164242Z.a3ee938d0c540e06.58e36ab370c756038a42d6b4148e9e68101881f7&text=" + encodeURI(els[i].innerHTML) + "&lang=en-" + this.id, els[i].id).then(results => {document.getElementById(results[1]).innerHTML = results[0].text[0];});}}
+    for (var i in els) {if(els[i].id != undefined) {getJSON("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190311T164242Z.a3ee938d0c540e06.58e36ab370c756038a42d6b4148e9e68101881f7&text=" + encodeURI(els[i].engData) + "&lang=" + this.id, els[i].id).then(results => {document.getElementById(results[1]).innerHTML = results[0].text[0];});}}
 }
