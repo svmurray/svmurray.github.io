@@ -82,12 +82,12 @@ html
     transition: all 3s;
 }
 
-a {color: #333333;}
-a:hover {color: #841534;}
-body {background-color: #e6e6e6;}
-.ddOpt:hover {background-color:rgb(232, 170, 46);}
-#footer a {color:white;}
+a               {color: #333333;}
+a:hover         {color: #841534;}
+body            {background-color: #e6e6e6;}
+.ddOpt:hover    {background-color:rgb(232, 170, 46);}
+#footer a       {color:white;}
 #footer a:hover {color: #31ede6;}
 #header a:hover {color: white;}
-.lbImg:hover {cursor: grab;}
-#selfPic:hover {height: 20em;}
+.lbImg:hover    {cursor: grab;}
+#selfPic:hover  {height: 20em;}
