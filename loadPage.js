@@ -27,16 +27,12 @@ window.onload = function () {
         };
         req2.open("POST", "https://translate.yandex.net/api/v1.5/tr/getLangs?key=trnsl.1.1.20190311T164242Z.a3ee938d0c540e06.58e36ab370c756038a42d6b4148e9e68101881f7&ui=en", "true");
 	    req2.send();
-        
         var holdNav = createElement("div","","nav");
         appendChildren(holdNav, [createLink("Home",      "homeLink", jsonData.links.index, false, "translatable"), createLink("Projects",  "projLink", jsonData.links.projects, false, "translatable"), createLink("Resume",    "resLink",  jsonData.links.resume, false, "translatable")]);
-
         var holdHead = document.getElementById("header");
         appendChildren(holdHead, [createElement("h2", jsonData.headerData.name, "headName"), createLink(jsonData.headerData.email, "email", "mailto:" + jsonData.headerData.email, "blank"), createElement("span", jsonData.headerData.phone, "phone"), holdNav]);
-       
         var holdFoot = document.getElementById("footer");
         appendChildren(holdFoot, [createElement("span", jsonData.footerData.text, "footText", "translatable"), createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true)]);
-        
         if(      document.getElementById("title").innerHTML == "Projects")  {loadProjects(jsonData);}
         else if (document.getElementById("title").innerHTML == "Home")      {loadHome(jsonData);}
         else if (document.getElementById("title").innerHTML == "Resume")    {loadResume(jsonData);}
