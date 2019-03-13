@@ -45,7 +45,7 @@
         },
         {
             "title": "History Sniffing Chess Board",
-            "desc": "For Information Security, I created a webpage that mimicked a CAPCHA but could determine if the unassuming user had been to any subset of a list of links and would supply a message dependent on what parts of the chess board were clicked.",
+            "desc": "For Information Security, I created a webpage that mimicked a CAPTCHA but could determine if the unassuming user had been to any subset of a list of links and would supply a message dependent on what parts of the chess board were clicked.",
             "images": 
             [
                 {"item": "images/chessboard.jpg"}, 

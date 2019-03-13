@@ -3,6 +3,56 @@
     margin: 0 auto;
 }
 
+#content
+{
+	padding-top: 7em;
+	width: 70vw;
+}
+
+#ddContainer
+{
+    display: none;
+    visibility: hidden;
+    z-index: -1;
+    position: absolute;
+    border-radius: 10px;
+    transition: visibility 3s;
+}
+
+#ddDiv
+{
+    display: inline-block;
+    position: relative;
+}
+
+#ddDiv:hover #ddContainer, #ddDiv:focus #ddContainer, #ddDiv:focus-within #ddContainer
+{
+    transition: visibility 3s;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    cursor: grab;
+    display: block;
+    font-size: 62.5%
+    min-width: 80px;
+    padding: 12px 16px;
+    visibility: visible;
+    z-index: 1;
+    overflow: auto;
+    max-height: 200px;
+}
+
+#footer
+{
+	background-color: black;
+	color: white;
+	font-size: 90%;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	padding: 1rem;
+	text-align: center;
+    transition: color, .2s;
+}
+
 #header
 {
 	background-color: rgb(11,165,60);
@@ -20,62 +70,10 @@
     transition: color, .2s;
 }
 
-#footer
-{
-	background-color: black;
-	color: white;
-	font-size: 90%;
-	margin-bottom: 1rem;
-	margin-top: 1rem;
-	padding: 1rem;
-	text-align: center;
-    transition: color, .2s;
-}
-
 html 
 {
     font-size: 100%;
     width: 100%;
-}
-
-#ddDiv
-{
-    display: inline-block;
-    position: relative;
-}
-
-#ddContainer
-{
-    display: none;
-    visibility: hidden;
-    z-index: -1;
-    position: absolute;
-    border-radius: 10px;
-    transition: visibility 3s;
-}
-
-#ddDiv:hover #ddContainer, #ddDiv:focus #ddContainer, #ddDiv:focus-within #ddContainer
-
-
-{
-    transition: visibility 3s;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    cursor: grab;
-    display: block;
-    font-size: 62.5%
-    min-width: 80px;
-    padding: 12px 16px;
-    visibility: visible;
-    z-index: 1;
-    overflow: auto;
-    max-height: 200px;
-}
-
-#content
-{
-	padding-top: 7em;
-	width: 70vw;
 }
 
 #selfPic
@@ -84,12 +82,12 @@ html
     transition: all 3s;
 }
 
-#selfPic:hover {height: 20em;}
-#header a:hover {color: white;}
-
 a {color: #333333;}
 a:hover {color: #841534;}
 body {background-color: #e6e6e6;}
+.ddOpt:hover {background-color:rgb(232, 170, 46);}
 #footer a {color:white;}
 #footer a:hover {color: #31ede6;}
+#header a:hover {color: white;}
 .lbImg:hover {cursor: grab;}
+#selfPic:hover {height: 20em;}
