@@ -78,9 +78,10 @@ html
 
 a               {color: #333333;}
 a:hover         {color: #841534;}
-.waiting * {cursor: progress;}
+body            {background-color: #e6e6e6;}
 .ddOpt:hover    {background-color:rgb(232, 170, 46);}
 #footer a       {color:white;}
 #footer a:hover {color: #31ede6;}
 #header a:hover {color: white;}
 .lbImg:hover    {cursor: grab;}
+#selfPic        {height: 15em;}
