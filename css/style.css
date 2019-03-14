@@ -11,12 +11,12 @@
 
 #ddContainer
 {
-    display: none;
-    visibility: hidden;
-    z-index: -1;
+    transition: all .3s;
     position: absolute;
     border-radius: 10px;
-    transition: visibility 3s;
+    opacity: 0;
+    height: 0px;
+    visibility: hidden;
 }
 
 #ddDiv
@@ -25,9 +25,8 @@
     position: relative;
 }
 
-#ddDiv:hover #ddContainer, #ddDiv:focus #ddContainer, #ddDiv:focus-within #ddContainer
+#ddDiv:hover #ddContainer
 {
-    transition: visibility 3s;
     background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     cursor: grab;
@@ -38,7 +37,8 @@
     visibility: visible;
     z-index: 1;
     overflow: auto;
-    max-height: 200px;
+    height: 200px;
+    opacity: 1;
 }
 
 #footer
