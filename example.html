@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+	th:hover{cursor: grab;}
+</style>
+<body>
+<p>Input a string to filter visible names:</p>
+
+	<div ng-app="myApp" ng-controller="namesCtrl">
+	<p><input type="text" ng-model="test"></p>
+
+<p>Click the table headers to change the sorting order:</p>
+<table border="1" width="100%">
+<tr>
+	<th ng-click="orderByMe('name')">Name</th>
+	<th ng-click="orderByMe('country')">Country</th>
+	<th ng-click="orderByMe('salary')">Salary</th>
+</tr>
+	<tr ng-repeat="x in names|filter:{name:test}|orderBy:myOrderBy">
+	<td>{{x.name}}</td>
+	<td>{{x.country | uppercase | limitTo:3}}</td>
+	<td>{{x.salary | currency}}</td>
+</tr>
+</table>
+
+<p>Modified tutorial from <a href = "https://www.w3schools.com/angular/angular_filters.asp" target="blank">w3Schools</a></p>
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    $scope.names = [
+        {name:'Jani',country:'Norway',salary:100000},
+        {name:'Carl',country:'Sweden',salary:546000},
+        {name:'Margareth',country:'England',salary:1289754},
+        {name:'Hege',country:'Norway',salary:5042},
+        {name:'Joe',country:'Denmark',salary:1},
+        {name:'Gustav',country:'Sweden',salary:80000},
+        {name:'Birgit',country:'Denmark',salary:5000},
+        {name:'Mary',country:'England',salary:750000},
+        {name:'Kai',country:'Norway',salary:200000}
+        ];
+    $scope.orderByMe = function(x) {
+        $scope.myOrderBy = x;
+    }
+});
+</script>
+
+</body>
+</html>
