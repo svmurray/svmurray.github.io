@@ -17,6 +17,7 @@
     {
         "index": "index.html",
         "projects": "projects.html",
-        "resume": "resume.html"
+        "resume": "resume.html",
+        "example": "example.html"
     }
 }
