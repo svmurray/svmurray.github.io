@@ -2,6 +2,7 @@
 window.onload = function () {
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = function() {
+	  console.log('in file');
 	  if (this.readyState == 4 && this.status == 200) {
 	    var jsonData = JSON.parse(this.responseText);	    
 	    var req2 = new XMLHttpRequest();
