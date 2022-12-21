@@ -2,7 +2,6 @@
 window.onload = function () {
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = function() {
-	  console.log('in file');
 	  if (this.readyState == 4 && this.status == 200) {
 	    var jsonData = JSON.parse(this.responseText);	    
 	    var req2 = new XMLHttpRequest();
@@ -55,11 +54,11 @@ function loadHome(json) {
     appendChildren(pDiv, [createImageWithProps("selfPic", json.home.picture, "Sam Murray", ["float", "marginRight", "marginBottom"], ["left", "1vw", "1em"]), createElement("h3", "About Me:", "parHead", "translatable")]);
     for (var i in json.home.paragraphs) {pDiv.appendChild(createElementWithStyleProps("p", json.home.paragraphs[i].item, "pDiv" + i, ["textIndent"], ["2rem"], "translatable"));}
     document.getElementById("content").insertBefore(pDiv, document.getElementById("footer"));
-    var newsDiv = createElementWithStyleProps("div", "", "newsDiv", ["marginTop"], ["2rem"]);
+/*    var newsDiv = createElementWithStyleProps("div", "", "newsDiv", ["marginTop"], ["2rem"]);
 	newsDiv.appendChild(createElement("h3", "Recent News:", "newsHead", "translatable"));
     var newsList = newsDiv.appendChild(createElement("ul", "", "newsList"));
     for (var i in json.home.news) {newsList.appendChild(createElement("li", json.home.news[i].item, "newsItem" + i, "translatable"));}
-    document.getElementById("content").insertBefore(newsDiv, document.getElementById("footer"));
+    document.getElementById("content").insertBefore(newsDiv, document.getElementById("footer"));*/
 }
 
 function loadProjects(json) {
