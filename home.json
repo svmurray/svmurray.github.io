@@ -4,15 +4,9 @@
         "picture": "me.jpg",
         "paragraphs":
         [
-            {"item": "I am currently a senior at the University of St. Thomas and will graduate in May 2019 with degrees in Computer Science (B.A.) as well as Supply Chain & Operations Management (B.A.), with a minor in Data Analytics. At St. Thomas I played rugby all 4 years. In my time, I served as match secretary for 1 semester, and as captain for 1 year. I also am a member of the Supply Chain & Operations Club."},
-            {"item": "Professionally, I would eventually like to get into Data Science/Data Analytics, but I am beginning my career as an Advisory Services Analyst with Optum in Eden Prairie Minnesota."},
-            {"item": "In my free time, I enjoy watching sports of all kinds, I am a fan of the Milwaukee Brewers and Bucks, Wisconsin Badgers, Minnesota Vikings and Wild, Arsenal FC, Saracens RFC. We are currently approaching the best sports time of the year with March Madness right around the corner."}
-        ],
-        "news":
-        [
-            {"item": "Returned from Israel/Jordan Theology Trip on January 27th, 2019"},
-            {"item": "Travelled to New Zealand in early June 2019"},
-            {"item": "Graduated with Summa Cum Laude distinction on May 24th, 2019"}
+            {"item": "I am currently a Marketing Data Opeartions Analyst at Keysight Technologies, where I began working in May of 2022. Before that, I spent 2.5 years at UnitedHealth Group, completing Optum's Consulting Development Program and joining United HealthCare's Pharmacy Trend Analytics team, as the West Region Lead."},
+            {"item": "Before my professional career began, I studied at the University of St. Thomas and graduated Summa Cum Laude in May 2019 with degrees in Computer Science (B.A.) as well as Supply Chain & Operations Management (B.A.), and a minor in Data Analytics. At St. Thomas I played rugby for all 4 years. In my time, I served as match secretary for 1 semester, and as captain for 1 year."},
+            {"item": "In my free time, I enjoy watching sports of all kinds, I am a fan of the Milwaukee Brewers and Bucks, Wisconsin Badgers, Minnesota Vikings and Wild, Arsenal FC, Saracens RFC. I have recently begun coaching youth basketball for Minneapolis Parks & Rec."}
         ]
     }
 }
