@@ -32,7 +32,8 @@ window.onload = function () {
         var holdHead = document.getElementById("header");
         appendChildren(holdHead, [createElement("h2", jsonData.headerData.name, "headName"), createLink(jsonData.headerData.email, "email", "mailto:" + jsonData.headerData.email, "blank"), createElement("span", jsonData.headerData.phone, "phone"), holdNav]);
         var holdFoot = document.getElementById("footer");
-        appendChildren(holdFoot, [createElement("span", jsonData.footerData.text, "footText", "translatable"), createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true)]);
+//        appendChildren(holdFoot, [createElement("span", jsonData.footerData.text, "footText", "translatable"), createLink(jsonData.footerData.linkText, "footLink", jsonData.footerData.linkAddr, true)]);
+        appendChildren(holdFoot, [createElement("span", jsonData.footerData.text, "footText", "translatable")]);
         if(      document.getElementById("title").innerHTML == "Projects")  {getJSON("projects.json").then(results => {loadProjects(results)});}
         else if (document.getElementById("title").innerHTML == "Home")      {getJSON("home.json").then(results => {loadHome(results)});}
         else if (document.getElementById("title").innerHTML == "Resume")    {getJSON("resume.json").then(results => {loadResume(results)});}
