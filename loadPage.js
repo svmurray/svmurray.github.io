@@ -11,7 +11,7 @@ window.onload = function () {
                 var langObj;
                 if (xmlObj.activeElement != undefined && xmlObj.activeElement != null) {langObj = xmlObj.activeElement.childNodes[1].childNodes;} //Firefox
                 else {langObj = xmlObj.getElementsByTagName("langs")[0].getElementsByTagName("Item");}//Chrome
-                var ddm = createElement("div", "", "ddDiv");
+/*                var ddm = createElement("div", "", "ddDiv");
                 var ddc = createElement("div", "", "ddContainer");
                 for (var i in langObj) {
                     if (langObj[i].attributes != undefined) {
@@ -21,12 +21,12 @@ window.onload = function () {
                     }
                 }
                 appendChildren(ddm, [createElement("button", "Translate", "ddButton", "translatable"),ddc]);
-                holdNav.appendChild(ddm);
+                holdNav.appendChild(ddm);*/
             }
             else if (this.readyState == 4) {console.log(this.status);};
         };
-        req2.open("POST", "https://translate.yandex.net/api/v1.5/tr/getLangs?key=trnsl.1.1.20190311T164242Z.a3ee938d0c540e06.58e36ab370c756038a42d6b4148e9e68101881f7&ui=en", "true");
-	    req2.send();
+/*        req2.open("POST", "https://translate.yandex.net/api/v1.5/tr/getLangs?key=trnsl.1.1.20190311T164242Z.a3ee938d0c540e06.58e36ab370c756038a42d6b4148e9e68101881f7&ui=en", "true");
+	    req2.send();*/
         var holdNav = createElement("div","","nav");
         appendChildren(holdNav, [createLink("Home",      "homeLink", jsonData.links.index, false, "translatable"), createLink("Projects",  "projLink", jsonData.links.projects, false, "translatable"), createLink("Resume",    "resLink",  jsonData.links.resume, false, "translatable")]);
         var holdHead = document.getElementById("header");
@@ -253,7 +253,7 @@ function prevPic(info) {
     document.getElementById("desc").innerHTML = info.title + "\t\t(" + imgIdx + "/" + (info.images.length -1) + ")<br />" + info.desc;
 }   
 
-function translate() {
+/*function translate() {
     var els = document.getElementsByClassName("translatable");
     for (var i in els) {if(els[i].id != undefined) {getJSON("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190311T164242Z.a3ee938d0c540e06.58e36ab370c756038a42d6b4148e9e68101881f7&text=" + encodeURI(els[i].engData) + "&lang=" + this.id, els[i].id).then(results => {document.getElementById(results[1]).innerHTML = results[0].text[0];});}}
-}
+}*/
