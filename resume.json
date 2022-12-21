@@ -7,8 +7,8 @@
             "csMajor": "Major: Computer Science (B.A.)",
             "scomMajor": "Major: Business Administration - Supply Chain & Operations Management (B.A.)",
             "minor": "Minor: Data Analytics",
-            "dl": "Dean's List: Fall 2015 - Fall 2018",
-            "gpa": "GPA: 3.91/4",
+            "dl": "Dean's List: Fall 2015 - Spring 2019",
+            "gpa": "GPA: 3.92/4",
             "aqui": "Aquinas Scholar",
             "studyAbroad" :
             {
@@ -20,12 +20,28 @@
         "work": 
         [
             {
-                "comp": "Optum",
+                "comp": "Keysight Technologies",
+                "loca": "Remote",
+                "date": "May 2022 - Present",
+                "title": "Marketing Operations Data Analyst",
+                "link": "https://www.keysight.com/us/en/home.html",
+                "resp": "Created tools to maintain and audit cleanliness in the data hierarchy"
+            },
+            {
+                "comp": "Saint Paul, MN",
                 "loca": "Eden Praire, Minnesota",
-                "date": "July 2019 - Present",
+                "date": "July 2019 - May 2022",
                 "link": "https://www.optum.com/",
-                "title": "Advisory Services Analyst - Consulting Development Program",
-                "resp": "Consulted with various clients in the healthcare industry to solve their internal business needs"
+                "title":
+                [
+                    {"data": "Advisory Services Consultant"},
+                    {"data": "Healthcare Economics Consultant – Cmty & State Rx Trend Analytics West Reg."}
+                ],
+                "resp": 
+                [
+                    {"info": "Automated reporting functions for Trend Analytics team across all regions"},
+                    {"info": "Created and Managed Project wide Tracking System for over 27,000 contracts representing over $331M in revenue across 7 states for 15 different rotating contractors"}
+                ]
             },
             {
                 "comp": "General Electric - GE Renewables",
